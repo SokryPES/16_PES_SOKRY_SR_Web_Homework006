@@ -1,6 +1,8 @@
+"use client"
 
 import { AppSidebar } from "@/components/app-sidebar"
 import Navbar from "@/components/NavbarComponent"
+import { usePathname } from "next/navigation"
 
 import {
   SidebarProvider,
@@ -10,6 +12,17 @@ import {
 export default function SidebarComponent({
   children
 }) {
+  const pathname = usePathname();
+
+  const showAppShell =
+    pathname === "/" ||
+    pathname === "/products" ||
+    pathname === "/customers";
+
+  if (!showAppShell) {
+    return <div className="min-h-screen bg-white">{children}</div>;
+  }
+
   return (
     <div className="flex flex-col h-screen">
       

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Calendar , Eye} from 'lucide-react';
+import { Calendar , Eye , UsersRound} from 'lucide-react';
 import Link from 'next/link';
 import {
   Table,
@@ -33,7 +33,16 @@ export default async function ListUserComponents({ q = "" }) {
     <div className='mt-5'>
       
       {filteredCustomers.length === 0 ? (
-        <p className='mt-4 text-sm text-slate-500'>No customers</p>
+        <div className="text-sm text-slate-500 h-[70vh] w-full flex items-center justify-center">
+          <div className="text-center">
+            <UsersRound  className="size-20 mx-auto" />
+            <h2 className="text-xl text-black">No customers found.</h2>
+            <p className="text-slate-500">We can't find any customers matching &quot; {q} &quot;.</p>
+            <Link href="/customers" >
+              <button className="cursor-pointer text-blue-500 text-center underline mt-3">Clear Search</button>
+            </Link>
+          </div>
+        </div>
       ) : (
         <Table className={"shadow-2xl p-4 "}>
       <TableHeader>

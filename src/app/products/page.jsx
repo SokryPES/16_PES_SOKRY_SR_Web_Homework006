@@ -1,6 +1,8 @@
 import React from "react";
 import CardProduct from "@/components/CardProduct";
 import SearchBar from "@/components/SearchBar";
+import { Box } from "lucide-react";
+import Link from "next/link";
 
 export default async function page({ searchParams }) {
   const { q = "" } = await searchParams;
@@ -24,7 +26,16 @@ export default async function page({ searchParams }) {
         />
       </div>
       {searchProduct.length === 0 ? (
-        <p className="text-sm text-slate-500">No products.</p>
+        <div className="text-sm text-slate-500 h-[70vh] w-full flex items-center justify-center">
+          <div className="text-center">
+            <Box className="size-20 mx-auto" />
+            <h2 className="text-xl text-black">No products found.</h2>
+            <p className="text-slate-500">We can't find any products matching &quot; {q} &quot;.</p>
+            <Link href="/products" >
+              <button className="cursor-pointer text-blue-500 text-center underline mt-3">Clear Search</button>
+            </Link>
+          </div>
+        </div>
       ) : (
         <div className="grid grid-cols-1 gap-4 auto-rows-fr sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {searchProduct.map((product) => (

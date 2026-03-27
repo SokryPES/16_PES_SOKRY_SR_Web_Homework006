@@ -20,9 +20,7 @@ import { AudioLinesIcon, TerminalIcon, TerminalSquareIcon, Cog , ChartBarStacked
 // This is sample data.
 const data = {
   user: {
-    name: "SokryPes",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "Sign IN" ,
   },
   teams: [
     {
@@ -116,8 +114,9 @@ export function AppSidebar({
       <SidebarContent>
         <NavMain items={data.navMain} />
       </SidebarContent>
-      <SidebarFooter>
-        <NavUser user={data.user} />
+      <SidebarFooter >
+        {/* <NavUser user={data.user} /> */}
+        <button className="text-red-500 text-xl font-bold -translate-4 -translate-x-8">Sign In</button>
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
