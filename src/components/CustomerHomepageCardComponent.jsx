@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users } from "lucide-react";
 
-export default function CustomerHomepageCardComponent() {
+export default function CustomerHomepageCardComponent({ customers }) {
   return (
     <div className="group relative w-full max-w-md h-137.5 bg-gradient-to-br from-amber-50 to-white rounded-[2.5rem] p-8 flex flex-col justify-between overflow-hidden border border-amber-100 shadow-[0_20px_50px_rgba(245,158,11,0.05)] transition-all duration-500 hover:shadow-[0_40px_80px_rgba(245,158,11,0.1)] hover:-translate-y-2">
       <div className="absolute -top-20 -right-20 w-64 h-64 bg-amber-200/30 rounded-full blur-3xl group-hover:bg-amber-300/40 transition-colors duration-700" />
@@ -35,7 +35,12 @@ export default function CustomerHomepageCardComponent() {
       <div className="relative z-10 w-full flex items-center justify-between border-t border-amber-100/50 pt-6">
         <div className="flex flex-col">
           <span className="text-[10px] uppercase font-bold text-slate-400 tracking-widest">
-            Total Users
+            <p>
+              Total Users 
+            </p>
+            <h2 className="text-2xl font-bold text-slate-800">
+              {customers.length}
+            </h2>
           </span>
           <span className="text-2xl font-black text-slate-800">{""}</span>
         </div>
