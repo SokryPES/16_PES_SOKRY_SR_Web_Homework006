@@ -4,28 +4,37 @@ import Link from 'next/link';
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
 
-export default async function ListUserComponents() {
+export default async function ListUserComponents({ q = "" }) {
     const res = await fetch(
         "https://homework-api.noevchanmakara.site/api/v1/customers"
     );
     const customers = await res.json();
+    const query = q.trim().toLowerCase();
+    const filteredCustomers = customers.payload.filter((customer) => {
+      const firstName = (customer.firstName ?? "").toLowerCase();
+      const lastName = (customer.lastName ?? "").toLowerCase();
+      const fullName = `${firstName} ${lastName}`.trim();
+
+      return (
+        firstName.includes(query) ||
+        lastName.includes(query) ||
+        fullName.includes(query)
+      );
+    });
     
 
   return (
-    <div className='px-5 mt-5'>
-      <div className='flex justify-between'>
-        <h1 className='font-bold text-2xl'>List of All Customers</h1>
-        <h1>Total Customers: {customers.payload.length}</h1>
-      </div>
-
+    <div className='mt-5'>
+      
+      {filteredCustomers.length === 0 ? (
+        <p className='mt-4 text-sm text-slate-500'>No customers</p>
+      ) : (
         <Table className={"shadow-2xl p-4 "}>
       <TableHeader>
         <TableRow>
@@ -36,7 +45,7 @@ export default async function ListUserComponents() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {customers.payload.map((customer) => (
+        {filteredCustomers.map((customer) => (
           <TableRow key={customer.customerId}>
             <TableCell >
                 <h2 className="text-xl font-semibold">{customer.firstName} {customer.lastName}</h2>
@@ -62,6 +71,7 @@ export default async function ListUserComponents() {
       </TableBody>
       
     </Table>
+      )}
 
 
     </div>

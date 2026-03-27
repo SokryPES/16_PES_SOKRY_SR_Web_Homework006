@@ -30,7 +30,7 @@ export function NavMain({
               asChild
               tooltip={item.title}
               isActive={isActive}
-              className="mt-2 py-5 duration-300 hover:bg-sky-100 data-[active=true]:!bg-sky-200 data-[active=true]:!text-sky-900"
+              className="mt-2 py-5 duration-300 hover:bg-sky-100 data-[active=true]:!bg-sky-200 data-[active=true]:!text-sky-900 "
             >
               <Link href={item.url}>
                 {item.icon}

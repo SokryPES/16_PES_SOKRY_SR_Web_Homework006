@@ -49,7 +49,7 @@ export default function CustomerDetail({ customer }) {
 							</p>
 							<p className="mt-2 inline-flex items-center gap-2 text-4xl font-black text-[#162345]">
 								<span className="grid size-8 place-content-center rounded-lg bg-emerald-100">
-									<DollarSign className="size-4 text-emerald-600" />
+									<DollarSign className="size-6 text-emerald-600" />
 								</span>
 								${customer.moneySpent ?? 0}
 							</p>
