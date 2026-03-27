@@ -25,7 +25,7 @@ export default function ProductHomepageCardComponent() {
       </div>
       <div className="relative z-10 h-64 w-full overflow-hidden rounded-3xl transition-transform duration-700 group-hover:scale-105">
               <Image
-                src={'https://i.pinimg.com/736x/fa/ac/4f/faac4ff879f39a1b684de1a031814c1d.jpg'}
+                src={'https://lowendmac.com/wp-content/uploads/mba15-m4-skyblue-gallery1-202503-1536x1180.png'}
                 alt="customer illustration"
                 className="object-contain object-center drop-shadow-[0_35px_35px_rgba(245,158,11,0.2)]"
                 priority
@@ -40,12 +40,12 @@ export default function ProductHomepageCardComponent() {
           <span className="text-2xl font-black text-slate-800">$1,999</span>
         </div>
 
-        {/* <Link> */}
-          <Button className="group/btn bg-pink-400 hover:bg-pink-600 text-white h-14 px-8 rounded-2xl font-bold shadow-lg shadow-pink-200 transition-all active:scale-95 flex gap-2">
+        <Link href={'/products'}>
+          <Button className="cursor-pointer group/btn bg-pink-400 hover:bg-pink-600 text-white h-14 px-8 rounded-2xl font-bold shadow-lg shadow-pink-200 transition-all active:scale-95 flex gap-2">
             View Details
             <ArrowRight className="size-4 transition-transform group-hover/btn:translate-x-1" />
           </Button>
-        {/* </Link> */}
+        </Link>
       </div>
     </div>
   );

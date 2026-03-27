@@ -1,5 +1,6 @@
 import React from 'react'
-import { Calendar } from 'lucide-react';
+import { Calendar , Eye} from 'lucide-react';
+import Link from 'next/link';
 import {
   Table,
   TableBody,
@@ -46,6 +47,15 @@ export default async function ListUserComponents() {
                 <span className="bg-green-100 px-2 py-1 rounded-lg">
                     ${customer.moneySpent}
                 </span>
+            </TableCell>
+            <TableCell className="text-center">
+              <Link
+                href={`/customers/${customer.customerId}`}
+                className="inline-flex items-center rounded-lg px-3 py-1.5 text-sm font-semibold transition border border-slate-300 hover:bg-slate-300"
+              >
+                <Eye className="size-4 me-2" />
+                View Detail
+              </Link>
             </TableCell>
           </TableRow>
         ))}

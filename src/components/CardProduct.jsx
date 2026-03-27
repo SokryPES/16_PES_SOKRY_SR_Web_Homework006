@@ -9,7 +9,7 @@ export default function CardProduct({ product }) {
     <div className="h-full"> 
       <div className="shadow-xl rounded-xl h-full flex flex-col">
         <Image
-          src={product.imageUrl ?? 'https://i.pinimg.com/736x/b3/b6/fc/b3b6fcce4b4ef0827a0088d08f9730d2.jpg'}
+          src={product.imageUrl ?? 'https://i.pinimg.com/736x/b5/03/d9/b503d9c5311213d636bdbb347d697d54.jpg'}
           alt={product.name}
           className="w-full h-48 object-cover rounded-lg"
           width={500}

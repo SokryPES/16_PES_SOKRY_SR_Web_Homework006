@@ -25,7 +25,7 @@ export default function CustomerHomepageCardComponent() {
       </div>
       <div className="relative z-10 h-64 w-full overflow-hidden rounded-3xl transition-transform duration-700 group-hover:scale-105">
         <Image
-          src={'https://i.pinimg.com/736x/fa/ac/4f/faac4ff879f39a1b684de1a031814c1d.jpg'}
+          src={'https://pngimg.com/uploads/businessman/businessman_PNG6587.png'}
           alt="customer illustration"
           className="object-contain object-center drop-shadow-[0_35px_35px_rgba(245,158,11,0.2)]"
           priority
@@ -39,8 +39,8 @@ export default function CustomerHomepageCardComponent() {
           </span>
           <span className="text-2xl font-black text-slate-800">{""}</span>
         </div>
-        <Link href={'/products'}>
-          <Button  className="group/btn bg-amber-300 hover:bg-amber-500 text-white h-14 px-8 rounded-2xl font-bold shadow-lg shadow-amber-200 transition-all active:scale-95 flex gap-2">
+        <Link href={'/customers'}>
+          <Button  className="cursor-pointer group/btn bg-amber-300 hover:bg-amber-500 text-white h-14 px-8 rounded-2xl font-bold shadow-lg shadow-amber-200 transition-all active:scale-95 flex gap-2">
             View All
             <ArrowRight className="size-4 transition-transform group-hover/btn:translate-x-1" />
           </Button>
